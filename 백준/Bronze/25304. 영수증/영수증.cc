@@ -1,17 +1,24 @@
 #include <stdio.h>
 
+
 int main() {
 
-	int totalPrice, typeNumber, price, number;
+	int total;
+	int kind;
+	int price;
+	int number;
 	int sum = 0;
-	scanf("%d %d", &totalPrice, &typeNumber);
 
-	for (int i = 0; i < typeNumber; i++)
+	scanf("%d", &total);
+	scanf("%d", &kind);
+	
+	for (int i = 0; i < kind; i++)
 	{
 		scanf("%d %d", &price, &number);
 		sum += price * number;
 	}
-	if (sum == totalPrice)
+
+	if (sum == total)
 	{
 		printf("Yes");
 	}
@@ -19,5 +26,6 @@ int main() {
 	{
 		printf("No");
 	}
+
 	return 0;
 }
