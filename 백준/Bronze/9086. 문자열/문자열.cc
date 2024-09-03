@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 int main() {
 
 	int t;
@@ -11,11 +11,7 @@ int main() {
 		int count = 0;
 		scanf("%s", s);
 
-		for (int j = 0; s[j] != '\0'; j++) {
-			count++;
-		}
-
-		printf("%c%c", s[0],s[count-1]);
+		printf("%c%c", s[0],s[strlen(s)-1]);
 
 		printf("\n");
 	}
