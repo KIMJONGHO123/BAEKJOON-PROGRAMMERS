@@ -15,9 +15,7 @@ int main() {
 		if (alpabet[index] == -1) {
 			alpabet[index] = i;
 		}
-		else {
-			continue;
-		}
+
 	}
 	
 	for (int i = 0; i < sizeof(alpabet); i++) {
