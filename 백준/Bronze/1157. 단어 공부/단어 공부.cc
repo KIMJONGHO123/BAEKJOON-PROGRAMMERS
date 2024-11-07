@@ -2,33 +2,32 @@
 #include <string.h>
 int main() {
 
-	char arr[1000005],character;
-	int alpabet[26] = {0,};
-	int max = 0;
+	char arr[1000000],character;
+	int frearr[26]={0}, max = 0;
+
 	scanf("%s", arr);
-	int length = strlen(arr);
-	for (int i = 0; i < length;i++)
+	int len = strlen(arr);
+	for (int i = 0; i < len; i++)
 	{
-		if (arr[i] >= 'a' && arr[i]<='z') {
-			alpabet[arr[i] - 'a']++;
+		if (arr[i] >= 'A' && arr[i] <= 'Z') {
+			frearr[arr[i] - 'A']++;
 		}
-		else if (arr[i] >= 'A' && arr[i] <= 'Z') {
-			alpabet[arr[i] - 'A']++;
+		else {
+			frearr[arr[i] - 'a']++;
 		}
 	}
 
 	for (int i = 0; i < 26; i++)
 	{
-		if(alpabet[i]>max){
-			max = alpabet[i];
-			character = 'A' + i;
-
+		if (frearr[i] > max) {
+			max = frearr[i];
+			character = i + 'A';
 		}
-		else if (alpabet[i] == max) {
+		else if(frearr[i] == max) {
 			character = '?';
 		}
+
 	}
 	printf("%c", character);
-	
 	return 0;
 }
