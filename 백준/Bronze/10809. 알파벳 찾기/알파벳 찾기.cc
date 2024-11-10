@@ -1,24 +1,32 @@
 #include <stdio.h>
 #include <string.h>
+
 int main() {
 
-	char alpabet[26];
-	char s[100] = "";
+	char s[101];
+	int arr[26] = {-1};
 	scanf("%s", s);
-
-	for (int i = 0; i < sizeof(alpabet); i++) {
-		alpabet[i] = -1;
+	int length = strlen(s);
+	
+	for (int i = 0; i < 26; i++)
+	{
+		arr[i] = -1;
+	}
+	for (int i = 0; i < length; i++)
+	{
+		int index = s[i] - 97;
+		if (arr[index] == -1) {
+			arr[index] = i;
+		}
+		
 	}
 
-	for (int i = 0; i < strlen(s); i++) {
-		int index = s[i] - 'a';
-		if (alpabet[index] == -1) {
-			alpabet[index] = i;
-		}
-
+	for (int i = 0; i < 26; i++)
+	{
+		printf("%d ", arr[i]);
 	}
 	
-	for (int i = 0; i < sizeof(alpabet); i++) {
-		printf("%d ", alpabet[i]);
-	}
+
+
+	return 0;
 }
