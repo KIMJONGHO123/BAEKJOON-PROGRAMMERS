@@ -1,20 +1,15 @@
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
+		int n = input.nextInt();
+		String s = input.next();
 		
-		int t,total=0;
-		String n;
-		t = input.nextInt();
-		n = input.next();
-
-		for (int i = 0; i < t; i++) {
-			total += n.charAt(i)-48;
+		int count=0;
+		for (int j = 0; j < n; j++) {
+			count+=s.charAt(j)-'0';
 		}
-		System.out.println(total);
-		
-		
+		System.out.println(count);
 	}
 }
